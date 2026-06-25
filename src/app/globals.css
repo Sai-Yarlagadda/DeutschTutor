@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Background layers */
+  --color-bg-base:    #0f0f0f;
+  --color-bg-surface: #1a1a1a;
+  --color-bg-raised:  #222222;
+
+  /* Borders */
+  --color-border:       #2a2a2a;
+  --color-border-muted: #1e1e1e;
+
+  /* Accent — warm amber */
+  --color-accent:       #d4a017;
+  --color-accent-hover: #e8b420;
+  --color-accent-dim:   #7a5c0d;
+
+  /* Text */
+  --color-text-primary: #f0ede8;
+  --color-text-muted:   #9e9a94;
+  --color-text-faint:   #5a5752;
+
+  /* Status */
+  --color-success: #4ade80;
+  --color-error:   #f87171;
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Lora", Georgia, serif;
+
+  /* Spacing & radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  min-height: 100dvh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar        { width: 6px; }
+::-webkit-scrollbar-track  { background: var(--color-bg-surface); }
+::-webkit-scrollbar-thumb  { background: var(--color-border); border-radius: 3px; }
+
+/* Selection card — used on scenario and persona grid cards */
+.selection-card {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  transition: background 150ms, border-color 150ms;
+}
+.selection-card:hover {
+  background: var(--color-bg-raised);
+  border-color: var(--color-accent);
+}
